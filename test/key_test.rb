@@ -1,7 +1,7 @@
 require 'pry'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/key_class'
+require './lib/key'
 
 class KeyTest < Minitest::Test
 
@@ -10,7 +10,14 @@ class KeyTest < Minitest::Test
   end
 
   def test_it_can_split
-    assert_equal ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " ", ".", ","], @key.create_array
+    alphabet_soup = ["a", "b", "c", "d", "e",
+                     "f", "g", "h", "i", "j",
+                     "k", "l", "m", "n", "o",
+                     "p", "q", "r", "s", "t",
+                     "u", "v", "w", "x", "y",
+                     "z", " ", ".", ","]
+
+    assert_equal alphabet_soup, @key.create_array
   end
 
   def test_it_can_find_rotate_number
