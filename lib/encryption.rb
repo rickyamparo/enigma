@@ -2,7 +2,7 @@ require 'pry'
 require './lib/key'
 
 class Encryption
-attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :key, :map_values_array
+attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :key, :map_values_array, :a_offset, :b_offset, :c_offset, :d_offset
 
   def initialize
     @key = Key.new
