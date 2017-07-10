@@ -16,4 +16,8 @@ class EncryptionTest < Minitest::Test
     assert_equal 45, @encrypt.decide_rotation_method(3)
   end
 
+  def test_it_can_add_rotation_to_number
+    assert_equal [19,27,45,60], @encrypt.add_rotate_number 
+  end
+
 end

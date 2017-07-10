@@ -23,11 +23,10 @@ attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :k
   end
 
   def add_rotate_number
-    local_array = ltr_to_number
-    local_array[0] += key.find_a_rotate
-    local_array[1] += key.find_b_rotate
-    local_array[2] += key.find_c_rotate
-    local_array[3] += key.find_d_rotate
+    local_array = convert_to_number
+    local_array = local_array.map do |number|
+      number += decide_rotation_method(local_array.index(number))
+    end
   end
 
   def decide_rotation_method(index)
