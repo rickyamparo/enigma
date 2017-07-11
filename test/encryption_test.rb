@@ -9,6 +9,17 @@ class EncryptionTest < Minitest::Test
     @encrypt = Encryption.new
   end
 
+  def test_it_can_split
+      alphabet_soup = ["a", "b", "c", "d", "e",
+                       "f", "g", "h", "i", "j",
+                       "k", "l", "m", "n", "o",
+                       "p", "q", "r", "s", "t",
+                       "u", "v", "w", "x", "y",
+                       "z", " ", ".", ","]
+
+      assert_equal alphabet_soup, @encrypt.create_array
+  end
+
   def test_it_decides_rotation_method
     assert_equal 12, @encrypt.decide_rotation_method(0)
     assert_equal 23, @encrypt.decide_rotation_method(1)
@@ -31,4 +42,8 @@ class EncryptionTest < Minitest::Test
     assert_equal [28,29,47,65], @encrypt.add_offset_number
   end
 
+  def test_it_can_cycle_through
+    assert_equal [28,0,18,7], @encrypt.cycling_through
+  end
+  
 end

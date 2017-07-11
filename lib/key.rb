@@ -1,7 +1,7 @@
 require 'pry'
 
 class Key
-attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :key_value
+attr_accessor :key_value
 
   def initialize
     @key_value = 12345

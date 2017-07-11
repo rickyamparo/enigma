@@ -3,7 +3,8 @@ require './lib/key'
 require './lib/offsets'
 
 class Encryption
-attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :key, :map_values_array, :a_offset, :b_offset, :c_offset, :d_offset, :offsets
+attr_accessor :key, :map_values_array, :offsets
+#need map_values_array in attr b/c no method, need to access within other methods
 
   def initialize
     @key = Key.new
@@ -49,7 +50,7 @@ attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :k
   def decide_offset_method(index)
     #decides which offset number to use
     if index % 4 == 0
-      @offsets.a_offset
+      offsets.a_offset
     elsif index % 4 == 1
       offsets.b_offset
     elsif index % 4 == 2
@@ -73,6 +74,8 @@ attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :k
         num = num % 29
     end
   end
+
+  #apply %29
 
   #use final number to assign to ltr to get output
 

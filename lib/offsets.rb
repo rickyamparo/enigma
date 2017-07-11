@@ -3,7 +3,7 @@ require './lib/encryption'
 require './lib/key'
 
 class Offsets
-attr_accessor :date, :a_offset, :b_offset, :c_offset, :d_offset
+attr_accessor :date
 
   def initialize
     @date = '020315'
