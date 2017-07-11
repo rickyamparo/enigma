@@ -70,33 +70,27 @@ attr_accessor :encrypt, :key, :offsets
     end
   end
 
-@other_variable = 23
-variable = 20
   def subtract_29
-    variable = 15
-
-    variable + @other_variable
+    local_array = subtract_rotate_and_offsets
+    local_array.map do |number|
+      while number < 0
+        number += 29
+      end
+      number
+    end
   end
 
+  def create_encryption
+    #use final number to assign to ltr to get output
+    local_array = subtract_29
+    local_array.map do |number|
+      number = encrypt.map_values_array[number]
+    end
+  end
 
+  def create_encryption_string
+    local_array = create_encryption
+    local_array.join
+  end
 
 end
-  #
-  # def minus_offset_number
-  #   local_array = unmodulo
-  #   local_array = local_array.map do |number|
-  #       number -= decide_offset_method(local_array.index(number))
-  #   end
-  # end
-  #
-  #
-  #
-  # def minus_rotate_number
-  #   local_array = convert_to_number
-  #   local_array = local_array.map do |number|
-  #       number += decide_rotation_method(local_array.index(number))
-  #   end
-  # end
-  #
-  # def number_to_letter
-  # end

@@ -35,17 +35,16 @@ class DecryptTest < Minitest::Test
     assert_equal [7, -25, -18, -43], @decrypt.subtract_rotate_and_offsets
   end
 
-  # def test_it_can_unmodulo
-  #   skip
-  #   assert_equal [28,29,47,65], @decrypt.unmodulo
-  # end
-  #
-  # def test_it_can_subtract_offsets
-  #
-  # end
-  #
-  # def test_it_can_subtract_rotation_number
-  #
-  # end
+  def test_it_can_subtract_29
+    assert_equal [7, 4, 11, 15], @decrypt.subtract_29
+  end
+
+  def test_it_can_assign_letters_to_numbers
+    assert_equal ["h","e","l","p"], @decrypt.create_encryption
+  end
+
+  def test_it_can_create_string
+    assert_equal "help", @decrypt.create_encryption_string
+  end
 
 end

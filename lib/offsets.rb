@@ -11,10 +11,6 @@ attr_accessor :date
     @last_4 = []
   end
 
-  # def date_squared
-  #   @date.to_i ** 2
-  # end
-
   def find_last_4_digits
     date_squared = @date.to_i ** 2
     date_array = date_squared.to_s.split(//)
