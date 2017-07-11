@@ -47,6 +47,7 @@ attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :k
   end
 
   def decide_offset_method(index)
+    #decides which offset number to use
     if index % 4 == 0
       @offsets.a_offset
     elsif index % 4 == 1
@@ -59,12 +60,12 @@ attr_accessor :find_a_rotate, :find_b_rotate, :find_c_rotate, :find_d_rotate, :k
   end
 
   def add_offset_number
+    #add offset number to index
     local_array = add_rotate_number
     local_array = local_array.map do |number|
         number += decide_offset_method(local_array.index(number))
     end
   end
-  #add offset number to index
 
   def cycling_through
     #%29 the array to come up with final rotation
