@@ -34,7 +34,7 @@ attr_accessor :key, :map_values_array, :offsets
       key.find_b_rotate
     elsif index % 4 == 2
       key.find_c_rotate
-    else
+    elsif index % 4 == 3
       key.find_d_rotate
     end
   end
@@ -55,7 +55,7 @@ attr_accessor :key, :map_values_array, :offsets
       offsets.b_offset
     elsif index % 4 == 2
       offsets.c_offset
-    else
+    elsif index % 4 == 3
       offsets.d_offset
     end
   end

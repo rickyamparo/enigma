@@ -20,6 +20,10 @@ class EncryptTest < Minitest::Test
       assert_equal alphabet_soup, @encrypt.create_array
   end
 
+  def test_it_can_convert_to_number
+    assert_equal [7, 4, 11, 15], @encrypt.convert_to_number
+  end
+
   def test_it_decides_rotation_method
     assert_equal 12, @encrypt.decide_rotation_method(0)
     assert_equal 23, @encrypt.decide_rotation_method(1)
