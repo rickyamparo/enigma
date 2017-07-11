@@ -1,5 +1,5 @@
 require 'pry'
-require './lib/encryption'
+require './lib/encrypt'
 require './lib/key'
 
 class Offsets

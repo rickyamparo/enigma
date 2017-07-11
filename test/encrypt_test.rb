@@ -1,12 +1,12 @@
 require 'pry'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/encryption'
+require './lib/encrypt'
 
-class EncryptionTest < Minitest::Test
+class EncryptTest < Minitest::Test
 
   def setup
-    @encrypt = Encryption.new
+    @encrypt = Encrypt.new
   end
 
   def test_it_can_split

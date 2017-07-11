@@ -2,7 +2,7 @@ require 'pry'
 require './lib/key'
 require './lib/offsets'
 
-class Encryption
+class Encrypt
 attr_accessor :key, :map_values_array, :offsets
 #need map_values_array in attr b/c no method, need to access within other methods
 
