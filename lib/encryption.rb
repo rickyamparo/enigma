@@ -69,14 +69,24 @@ attr_accessor :key, :map_values_array, :offsets
   end
 
   def cycling_through
-    #%29 the array to come up with final rotation
+    #%29 the array to come up with final rotation\
+    local_array = add_offset_number
     local_array = local_array.map do |num|
         num = num % 29
     end
   end
 
-  #apply %29
+  def create_encryption
+    #use final number to assign to ltr to get output
+    local_array = cycling_through
+    local_array.map do |number|
+      number = @map_values_array[number]
+    end
+  end
 
-  #use final number to assign to ltr to get output
+  def create_encryption_string
+    local_array = create_encryption
+    local_array.join
+  end
 
 end

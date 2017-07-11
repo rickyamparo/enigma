@@ -45,5 +45,13 @@ class EncryptionTest < Minitest::Test
   def test_it_can_cycle_through
     assert_equal [28,0,18,7], @encrypt.cycling_through
   end
-  
+
+  def test_it_can_encrypt
+    assert_equal [",","a","s","h"], @encrypt.create_encryption
+  end
+
+  def test_encrypt_turns_into_string
+    assert_equal ",ash", @encrypt.create_encryption_string
+  end
+
 end
