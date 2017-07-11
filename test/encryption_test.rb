@@ -17,7 +17,18 @@ class EncryptionTest < Minitest::Test
   end
 
   def test_it_can_add_rotation_to_number
-    assert_equal [19,27,45,60], @encrypt.add_rotate_number 
+    assert_equal [19,27,45,60], @encrypt.add_rotate_number
+  end
+
+  def test_it_can_decide_offsets
+    assert_equal 9, @encrypt.decide_offset_method(0)
+    assert_equal 2, @encrypt.decide_offset_method(1)
+    assert_equal 2, @encrypt.decide_offset_method(2)
+    assert_equal 5, @encrypt.decide_offset_method(3)
+  end
+
+  def test_it_can_add_offsets
+    assert_equal [28,29,47,65], @encrypt.add_offset_number
   end
 
 end
