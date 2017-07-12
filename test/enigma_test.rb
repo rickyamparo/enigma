@@ -1,13 +1,10 @@
 require 'pry'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/crack'
+require './lib/enigma'
 
-class CrackTest < Minitest::Test
+class EnigmaTest < Minitest::Test
 
   def setup
-    @crack = Crack.new
+    @e = Enigma.new
   end
-
-
-end

@@ -5,24 +5,15 @@ require './lib/encrypt'
 require './lib/decrypt'
 
 class Crack
-attr_accessor :encrypt
+attr_accessor :encrypt, :decrypt
 
-  def initialize
-    @code = "nd.."
+  def initialize(code)
+    @code = code
     @encrypt = Encrypt.new
+    @decrypt = Decrypt.new
   end
 
-  def split_code_string
-    local_array = @code.split(//)
-  end
+#while code[-7..-1] != ..end..
+#keep decrypting
 
-  def assign_index_value
-    local_array = split_code_string
-    encrypt.create_array
-    local_array.map do |letter|
-      encrypt.map_values_array.index(letter)
-    end
-  end
-
-  
 end
