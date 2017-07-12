@@ -19,24 +19,6 @@ attr_accessor :decrypt, :key, :offsets
     @map_values_array = "abcdefghijklmnopqrstuvwxyz .,".split(//)
   end
 
-  #find length of coded message
-  def find_length
-    @output_message.length
-  end
-
-  #assign ABCD, BCDA, CDAB, DABC according to % 4
-  def assign_pattern
-    if @output_message.length % 4 == 0
-      pattern ABCD
-    elsif @output_message.length % 4 == 1
-      pattern BCDA
-    elsif @output_message.length % 4 == 2
-      pattern CDAB
-    elsif @output_message.length % 4 == 3
-      patter CABC
-    end
-  end
-
   #turn nd.. into index (PUT MAP VALUES INTO CRACK!!)
   def end_index
     local_array = "nd..".split(//)
@@ -59,6 +41,24 @@ attr_accessor :decrypt, :key, :offsets
     def nd_index_minus_4_index
     end
 
+    #find length of coded message
+    def find_length
+      @output_message.length
+    end
+
+    def assign_pattern
+      local_array = nd_index_minus_4_index
+      if @output_message.length % 4 == 0
+        local_array
+      elsif @output_message.length % 4 == 1
+        local_array.rotate
+      elsif @output_message.length % 4 == 2
+        local_array.rotate(2)
+      elsif @output_message.length % 4 == 3
+        local_array.rotate(3)
+      end
+    end
+
   #turn message into index
     def message_to_index
       local_array = @output_message.split(//)
@@ -66,10 +66,6 @@ attr_accessor :decrypt, :key, :offsets
       local_array[-4..-1].map do |letter|
         @map_values_array.index(letter)
       end
-    end
-
-  #use modulo 4 to apply ABCD pattern (like mapvaluesarray) to message
-    def apply_ABCD_patterns
     end
 
   #according to ABCD index, apply difference to index

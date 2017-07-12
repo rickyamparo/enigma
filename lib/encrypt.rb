@@ -9,7 +9,7 @@ attr_accessor :key, :map_values_array, :offsets
   def initialize(input_message)
     @key = Key.new
     @offsets = Offsets.new
-    @input_message = input_message
+    @input_message = Filereader.new
     @map_values_array = []
   end
 
@@ -88,8 +88,5 @@ attr_accessor :key, :map_values_array, :offsets
     local_array = create_encryption
     local_array.join
   end
-
-  # def encrypt
-  # end
 
 end
