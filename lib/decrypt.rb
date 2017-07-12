@@ -1,16 +1,19 @@
 require 'pry'
 require './lib/key'
 require './lib/offsets'
-require './lib/encrypt'
 
 class Decrypt
-attr_accessor :encrypt, :key, :offsets
+attr_accessor :key, :offsets
 
-  def initialize
-    @encrypt = Encrypt.new
+  def initialize(output_message)
     @key = Key.new
     @offsets = Offsets.new
-    @output_message = ",ash"
+    @output_message = output_message
+    @map_values_array = []
+  end
+
+  def create_array
+    @map_values_array = "abcdefghijklmnopqrstuvwxyz .,".split(//)
   end
 
   def split_decryption_string
@@ -19,9 +22,9 @@ attr_accessor :encrypt, :key, :offsets
 
   def assign_index_value
     local_array = split_decryption_string
-    encrypt.create_array
+    self.create_array
     local_array.map do |letter|
-      encrypt.map_values_array.index(letter)
+      @map_values_array.index(letter)
     end
   end
 
@@ -84,7 +87,7 @@ attr_accessor :encrypt, :key, :offsets
     #use final number to assign to ltr to get output
     local_array = subtract_29
     local_array.map do |number|
-      number = encrypt.map_values_array[number]
+      number = @map_values_array[number]
     end
   end
 

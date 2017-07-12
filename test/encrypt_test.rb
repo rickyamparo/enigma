@@ -6,7 +6,7 @@ require './lib/encrypt'
 class EncryptTest < Minitest::Test
 
   def setup
-    @encrypt = Encrypt.new
+    @encrypt = Encrypt.new("help")
   end
 
   def test_it_can_split

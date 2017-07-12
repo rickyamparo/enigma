@@ -6,7 +6,7 @@ require './lib/decrypt'
 class DecryptTest < Minitest::Test
 
   def setup
-    @decrypt = Decrypt.new
+    @decrypt = Decrypt.new(",ash")
   end
 
   def test_it_can_split

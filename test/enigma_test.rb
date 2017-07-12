@@ -8,3 +8,5 @@ class EnigmaTest < Minitest::Test
   def setup
     @e = Enigma.new
   end
+
+  def 
