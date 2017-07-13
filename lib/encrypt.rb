@@ -11,7 +11,7 @@ attr_accessor :key, :map_values_array, :offsets
     @offsets = Offsets.new
     @input_message = input_message
     @map_values_array = []
-    @output_message = create_encryption_string
+    # @output_message = create_encryption_string
   end
 
   def create_map
