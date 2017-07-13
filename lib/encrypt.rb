@@ -6,10 +6,10 @@ class Encrypt
 attr_accessor :key, :map_values_array, :offsets
 #need map_values_array in attr b/c no method, need to access within other methods
 
-  def initialize(input_message)
+  def initialize(input_message, key, date)
     @key = Key.new
     @offsets = Offsets.new
-    @input_message = input_message
+    @input_message = Filereader.new
     @map_values_array = []
   end
 
@@ -92,8 +92,5 @@ attr_accessor :key, :map_values_array, :offsets
     local_array = create_encryption
     local_array.join
   end
-
-  # def encrypt
-  # end
 
 end
