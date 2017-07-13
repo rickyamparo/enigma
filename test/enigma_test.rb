@@ -9,4 +9,8 @@ class EnigmaTest < Minitest::Test
     @e = Enigma.new
   end
 
-  def 
+  def test_it_can_create_string
+    assert_instance_of String, @e.encrypt("help")
+  end
+
+end

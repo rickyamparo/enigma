@@ -9,19 +9,20 @@ class Enigma
 attr_accessor
 
   def initialize
-    @encrypt = Encrypt.new
-    @decrypt = Decrypt.new
-    @crack = Crack.new
+    @encrypt = nil
+    @decrypt = nil
+    @crack = nil
   end
 
-  def encrypt(input_message, key, date)
-
+  def encrypt(input_message)
+    @encrypt = Encrypt.new(input_message)
+    @encrypt.create_encryption_string
   end
+  #
+  # def decrypt(output_message, key, date)
+  #
+  # end
+  #
+  # def crack(output_message, date)
 
-  def decrypt(output_message, key, date)
-
-  end
-
-  def crack(output_message, date)
-
-  end
+end

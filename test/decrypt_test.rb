@@ -50,8 +50,8 @@ class DecryptTest < Minitest::Test
     assert_instance_of Array, @decrypt.subtract_rotate_and_offsets
   end
 
-  def test_it_can_subtract_29
-    assert_instance_of Array, @decrypt.subtract_29
+  def test_it_can_subtract_39
+    assert_instance_of Array, @decrypt.subtract_39
   end
 
   def test_it_can_assign_letters_to_numbers

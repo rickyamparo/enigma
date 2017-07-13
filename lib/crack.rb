@@ -7,16 +7,21 @@ require './lib/decrypt'
 class Crack
 attr_accessor :decrypt, :key, :offsets
 
-  def initialize(code, date)
-    @key = Key.new
+  def initialize(output_message)
     @offsets = Offsets.new
     @output_message = output_message
-    @decrypt = Decrypt.new
+    @decrypt = Decrypt.new(output_message)
     @map_values_array = []
   end
 
   def create_array
     @map_values_array = "abcdefghijklmnopqrstuvwxyz .,".split(//)
+  end
+
+  def run_decrypt
+binding.pry
+    @decrypt
+
   end
 
   def blahblah
@@ -34,12 +39,7 @@ attr_accessor :decrypt, :key, :offsets
 
   def throw_up_key
   end
-
-<<<<<<< HEAD
-    #we take the key and apply
-
 end
-=======
 #   #turn nd.. into index (PUT MAP VALUES INTO CRACK!!)
 #   def end_index
 #     local_array = "nd..".split(//)
@@ -133,4 +133,3 @@ end
 #     end
 #
 # end
->>>>>>> c39b827c4ab579f138246859df9cda3549086a86

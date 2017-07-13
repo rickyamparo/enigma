@@ -5,7 +5,7 @@ require './lib/offsets'
 class Decrypt
 attr_accessor :key, :offsets
 
-  def initialize(output_message, key, date)
+  def initialize(output_message)
     @key = Key.new
     @offsets = Offsets.new
     @output_message = output_message
@@ -73,11 +73,11 @@ attr_accessor :key, :offsets
     end
   end
 
-  def subtract_29
+  def subtract_39
     local_array = subtract_rotate_and_offsets
     local_array.map do |number|
       while number < 0
-        number += 29
+        number += 39
       end
       number
     end
@@ -85,7 +85,7 @@ attr_accessor :key, :offsets
 
   def create_encryption
     #use final number to assign to ltr to get output
-    local_array = subtract_29
+    local_array = subtract_39
     local_array.map do |number|
       number = @map_values_array[number]
     end
