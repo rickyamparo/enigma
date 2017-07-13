@@ -9,5 +9,8 @@ class CrackTest < Minitest::Test
     @crack = Crack.new
   end
 
+def test_it_can_end_index
+  assert_instance_of ARRAY, @crack.end_index
+end
 
 end

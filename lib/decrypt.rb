@@ -5,7 +5,7 @@ require './lib/offsets'
 class Decrypt
 attr_accessor :key, :offsets
 
-  def initialize(output_message)
+  def initialize(output_message, key, date)
     @key = Key.new
     @offsets = Offsets.new
     @output_message = output_message
