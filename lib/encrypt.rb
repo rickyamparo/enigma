@@ -13,14 +13,18 @@ attr_accessor :key, :map_values_array, :offsets
     @map_values_array = []
   end
 
-  def create_array
-    @map_values_array = "abcdefghijklmnopqrstuvwxyz .,".split(//)
+  def create_map
+    @map_values_array = "abcdefghijklmnopqrstuvwxyz0123456789 .,".split(//)
+  end
+
+  def randomize_key
+    @key.random_key_generator
   end
 
   def convert_to_number
     #assigns each letter to index according to map_values_array
     local_array = @input_message.split(//)
-    self.create_array
+    create_map
     local_array.map do |letter|
       @map_values_array.index(letter)
     end
@@ -72,7 +76,7 @@ attr_accessor :key, :map_values_array, :offsets
     #%29 the array to come up with final rotation\
     local_array = add_offset_number
     local_array = local_array.map do |num|
-        num = num % 29
+        num = num % 39
     end
   end
 

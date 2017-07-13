@@ -12,8 +12,8 @@ attr_accessor :key, :offsets
     @map_values_array = []
   end
 
-  def create_array
-    @map_values_array = "abcdefghijklmnopqrstuvwxyz .,".split(//)
+  def create_map
+    @map_values_array = "abcdefghijklmnopqrstuvwxyz0123456789 .,".split(//)
   end
 
   def split_decryption_string
@@ -22,7 +22,7 @@ attr_accessor :key, :offsets
 
   def assign_index_value
     local_array = split_decryption_string
-    self.create_array
+    create_map
     local_array.map do |letter|
       @map_values_array.index(letter)
     end

@@ -6,14 +6,17 @@ class Offsets
 attr_accessor :date
 
   def initialize
-    @date = '020315'
-    #DDMMYY
+    @date = Time.now.strftime("%d%m%y")
     @last_4 = []
   end
 
+  def square_date
+    date.to_i ** 2
+  end
+
   def find_last_4_digits
-    date_squared = @date.to_i ** 2
-    date_array = date_squared.to_s.split(//)
+    square_date
+    date_array = square_date.to_s.split(//)
     @last_4 = date_array[-4..-1]
   end
 

@@ -30,4 +30,6 @@ attr_accessor :decrypt, :key, :offsets
     end
     #range of keys to try [00000..99999]
 
+    #we take the key and apply
+
 end
